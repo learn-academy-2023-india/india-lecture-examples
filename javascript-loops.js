@@ -20,7 +20,7 @@
 //   action to take; code block; executable code
 // }
 
-// for(i = 0; i < 8; i = i + 1) {
+// for(let i = 0; i < 8; i = i + 1) {
 //   console.log(i)
 // }
 // output:
@@ -37,7 +37,7 @@ var dinner = [ "cornbread dressing", "mashed potatoes and gravy", "sweet potato 
 
 // Create a sentence with each value in the array
   // abstracting the value by using bracket notation [] to reference the index 
-// for(i = 0; i < 8; i = i + 1) {
+// for(let i = 0; i < 8; i = i + 1) {
 //   console.log(dinner[i])
 // }
 
@@ -54,14 +54,14 @@ var dinner = [ "cornbread dressing", "mashed potatoes and gravy", "sweet potato 
 
 // Make a sentence with each value in the array
   // string interpolation `${variable}`
-// for(i = 0; i < 8; i = i + 1) {
+// for(let i = 0; i < 8; i = i + 1) {
 //   console.log(`I can't wait to eat ${dinner[i]}.`)
 // }
 
 // Make the stopping condition dynamic
   // use .length which will count the amount the values in the array
   // console.log(dinner.length)
-// for(i = 0; i < dinner.length; i = i + 1) {
+// for(let i = 0; i < dinner.length; i = i + 1) {
 //   console.log(`At index ${i}: I can't wait to eat ${dinner[i]}.`)
 // }
 
@@ -75,7 +75,7 @@ var dinner = [ "cornbread dressing", "mashed potatoes and gravy", "sweet potato 
 // // I can't wait to eat hawaiian rolls.
 // // I can't wait to eat smoked turkey.
 
-for(i = 0; i < dinner.length; i = i + 1) {
+for(let i = 0; i < dinner.length; i = i + 1) {
   console.log(`At index ${i}: I can't wait to eat ${dinner[i]}.`)
 }
   console.log(dinner.length)
