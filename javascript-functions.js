@@ -147,5 +147,30 @@ const lunchOrder = (meal, size) => {
 }
 
 var lunchOptions = ["turkey sub", "ham sub", "pizza", "fried egg", "avocado"]
-console.log(lunchOrder(lunchOptions[3], "Small"))
+// console.log(lunchOrder(lunchOptions[3], "Small"))
 // --> something went wrong, try again
+
+
+
+// The Pluralizer
+
+// Write a function named pluralizer that takes a number and a singular noun as arguments and returns the number and pluralized form of the noun, if necessary.
+// Enhance your function so it can handle a few collective nouns like "sheep", "goose", "child", "person" and "species".
+
+// input: singular noun - string, number - total of two inputs
+// output: string with the number and the appropriate noun 
+// if the number is 2 or more - nouns will be pluralized by adding s
+// if the number is 1 - return the noun as is
+
+const pluralizer = (noun, number) => {
+  if(number === 1){
+    return `there is ${number} ${noun}`
+  } else if(noun === "person") {
+    return `there are ${number} people`
+  } else if(number > 1){
+    return `there are ${number} ${noun}s`
+  }
+}
+console.log(pluralizer("cat", 1))
+console.log(pluralizer("dog", 2))
+console.log(pluralizer("person", 2))
