@@ -119,14 +119,46 @@ var myArrayOfString = ["hello", "hey", "india", "LEARN", "hola!"]
 // make a decision about every item in the array, filter
 // typeof "string"
 
-const onlyStrings = (array) => {
+// const onlyStrings = (array) => {
+//   return array.filter(value => {
+//     return typeof value === "string"
+//   })
+// }
+// console.log(onlyStrings([true, 4, 5, false, "hello", "yo", null]))
+// // --> [ 'hello', 'yo' ]
+
+// var mixedData = [7, "hola", null, true, undefined, "yo!"]
+// console.log(onlyStrings(mixedData))
+// --> [ 'hola', 'yo!' ]
+
+
+
+// Create a function that takes in an array of numbers and letters and returns a string with only the letters. HINT: Use the typeof operator.
+const comboArr = [7, "n", "i", "c", 10, "e", false, "w", 3, "o", "r", "k"]
+// output: "nicework"
+
+// input: one array of all data types
+// output: string
+// making a decision about every item in the array - filter
+// determine if the value is a string
+// go from array to string
+
+// const lettersOnly = (array) => {
+//   let onlyStringsArray = array.filter(value => {
+//     console.log(typeof value)
+//     return typeof value === "string"
+//   })
+//   return onlyStringsArray.join("")
+// }
+// console.log(lettersOnly(comboArr))
+// --> [ 'n', 'i', 'c', 'e', 'w', 'o', 'r', 'k']
+// --> nicework
+
+const lettersOnly = (array) => {
   return array.filter(value => {
     return typeof value === "string"
-  })
+  }).join("").toUpperCase()
 }
-console.log(onlyStrings([true, 4, 5, false, "hello", "yo", null]))
-// --> [ 'hello', 'yo' ]
-
-var mixedData = [7, "hola", null, true, undefined, "yo!"]
-console.log(onlyStrings(mixedData))
-// --> [ 'hola', 'yo!' ]
+console.log(lettersOnly(comboArr))
+// --> nicework
+// --> NICEWORK
