@@ -30,7 +30,12 @@ export default App;
 2. import useState() react hook
 3. destructure state variable and setter function from useState
 
-
+## Display Data on a Nested Component
+1. Create a components directory on src
+2. Create a file with the same name as the intended react component: Trip.js
+3. Pass the vacation data down as props to the nested component
+4. Accept the data on the nested component
+5. Map across each value in the array to display it as a line item of an unordered list
 
 
 conditional rendering

@@ -1,5 +1,6 @@
 // imports
 import React, { useState } from "react"
+import Trip from "./components/Trip";
 import './App.css';
 
 // functional component declaration
@@ -13,11 +14,12 @@ const App = () => {
   )
 
   // debugging
-  console.log("vacation: ", vacation)
+  // console.log("vacation: ", vacation)
   // display on the UI
   return(
     <>
       <h1>Jingle All the Way as We Go on Vacay!</h1>
+      <Trip vacation={vacation} />
     </>
   )
 }
