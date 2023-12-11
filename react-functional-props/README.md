@@ -37,8 +37,11 @@ export default App;
 4. Accept the data on the nested component
 5. Map across each value in the array to display it as a line item of an unordered list
 
+## conditional rendering
+conditional rendering: display data based on a true conditional involving the logical AND &&
+`{value.selected && <p>Thank you for reserving a spot.</p>}`
 
-conditional rendering
+##
 immediately invoked function
 stack overflow
 

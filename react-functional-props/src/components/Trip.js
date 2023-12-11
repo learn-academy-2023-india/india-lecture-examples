@@ -14,9 +14,14 @@ const Trip = (props) => {
       <ul>
         {props.vacation.map((value, index) => {
           return(
-            <li key={index}>
-              {value.destination} - Total travelers: {value.travelers}
-            </li>
+            <>
+              <li key={index}>
+                {value.destination} - Total travelers: {value.travelers}
+              </li>
+              {value.selected && 
+                <p>Thank you for reserving a spot.</p>
+              }
+            </>
           )
         })}
       </ul>
