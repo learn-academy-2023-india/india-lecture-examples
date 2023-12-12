@@ -59,10 +59,14 @@ conditional rendering: display data based on a true conditional involving the lo
       - use spread operator `...` to copy the changes 
       - use array literal syntax to store as an array `[]`
       
-    - function call: assign function call to onClick attribute for a button
-      - button will be stored on Trip.js
+2. Perform function call
+  - Assign function call to onClick attribute for a button
+    - button will be stored on Trip.js
 
-- immediately invoked function: function that is immediately invoked or called without waiting for user interaction
+- immediately invoked function: function that is immediately invoked or called without waiting for user interaction, executes immediately when the application is started
+  - `<button onClick={props.vacationPlan(index)}> Select this trip </button>`
+  - use anonymous function syntax to allow the onClick attribute to wait for a user to click button to invoke the function
+  `onClick={() => props.vacationPlan(index)}`
 - stack overflow: when the actions of an immediately invoked function exceeds the memory of the application 
   - use Ctrl + C to stop
 
