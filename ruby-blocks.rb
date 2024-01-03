@@ -73,12 +73,12 @@
 # range: object that represents a sequence of values
   # range: sequence of numbers or characters. Defined using range operator (..)
 
-number_range = 1..20
-p number_range
+# number_range = 1..20
+# p number_range
 
-number_range.each do |value|
-  puts "Number: #{value}"
-end
+# number_range.each do |value|
+#   puts "Number: #{value}"
+# end
 
 # output: Number: 1
   # Number: 2
@@ -101,6 +101,82 @@ end
   # Number: 19
   # Number: 20
 
-  
+# map method: 
+
+# birthday_gift = ['spa day', 'perfume', 'purse', 'bones for the broth', 'spirited beverages', 'flowers', 'cake']
+
+# birthday_gift.each do |gift|
+#   puts "Unhumblers are gifting the Aloha Queen #{gift}"
+# end
+# Output:
+  # Unhumblers are gifting the Aloha Queen spa day
+  # Unhumblers are gifting the Aloha Queen perfume
+  # Unhumblers are gifting the Aloha Queen purse
+  # Unhumblers are gifting the Aloha Queen bones for the broth
+  # Unhumblers are gifting the Aloha Queen spirited beverages
+  # Unhumblers are gifting the Aloha Queen flowers
+  # Unhumblers are gifting the Aloha Queen cake
+
+# p birthday_gift
+# Output: ["spa day", "perfume", "purse", "bones for the broth", "spirited beverages", "flowers", "cake"]
+
+# birthday_gift.map do |gift|
+#   puts "Unhumblers are gifting the Aloha Queen #{gift}"
+# end
+
+# Output: When the map is not stored in a variable
+# Unhumblers are gifting the Aloha Queen spa day
+# Unhumblers are gifting the Aloha Queen perfume
+# Unhumblers are gifting the Aloha Queen purse
+# Unhumblers are gifting the Aloha Queen bones for the broth
+# Unhumblers are gifting the Aloha Queen spirited beverages
+# Unhumblers are gifting the Aloha Queen flowers
+# Unhumblers are gifting the Aloha Queen cake
+
+# To access the array, store the map block in a variable
+
+# birthday_gift = ['spa day', 'perfume', 'purse', 'bones for the broth', 'spirited beverages', 'flowers', 'cake']
+
+# aloha_gifts = birthday_gift.map do |gift|
+#   "Unhumblers are gifting the Aloha Queen #{gift}"
+# end
+
+# p aloha_gifts
+
+# output: ["Unhumblers are gifting the Aloha Queen spa day", "Unhumblers are gifting the Aloha Queen perfume", "Unhumblers are gifting the Aloha Queen purse", "Unhumblers are gifting the Aloha Queen bones for the broth", "Unhumblers are gifting the Aloha Queen spirited beverages", "Unhumblers are gifting the Aloha Queen flowers", "Unhumblers are gifting the Aloha Queen cake"]
+
+# p 'birthday_gift: ', birthday_gift
+# Output: ["spa day", "perfume", "purse", "bones for the broth", "spirited beverages", "flowers", "cake"]
+
+# Mutator: place the bang operator(!) after the method
+# my_gift = ['spa day', 'perfume', 'purse', 'bones for the broth', 'spirited beverages', 'flowers', 'cake']
+
+# my_gift.map! do |gift|
+#   "Unhumblers are gifting the Aloha Queen #{gift}"
+# end
+
+# p 'my_gift: ', my_gift
+# output: ["Unhumblers are gifting the Aloha Queen spa day", "Unhumblers are gifting the Aloha Queen perfume", "Unhumblers are gifting the Aloha Queen purse", "Unhumblers are gifting the Aloha Queen bones for the broth", "Unhumblers are gifting the Aloha Queen spirited beverages", "Unhumblers are gifting the Aloha Queen flowers", "Unhumblers are gifting the Aloha Queen cake"]
+
+# Create a loop that prints only even numbers from 20 to 0.
+# num = 20
+# while num >= 0
+#   p num
+#   num = num - 2 # long hand
+#   # num -= 2 # short hand
+# end
+
+# Output: 20
+  # 18
+  # 16
+  # 14
+  # 12
+  # 10
+  # 8
+  # 6
+  # 4
+  # 2
+  # 0
+
 # ice box: using multiple parameters and access the index
 # ruby method link
