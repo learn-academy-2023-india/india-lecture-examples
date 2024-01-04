@@ -179,4 +179,24 @@
   # 0
 
 # ice box: using multiple parameters and access the index
+
+# --> Parameters passed into the pipes dynamically represent the values of the array, and the index is not explicitly accessible.
+# --> To access the index of an array, use the each_with_index method, which provides both the value and its index.
+# --> Example
+# my_gift = ['spa day', 'perfume', 'purse', 'bones for the broth', 'spirited beverages', 'flowers', 'cake']
+# my_gift.each_with_index do |value, index|
+#   puts "Index: #{index}, Value: #{value}"
+# end
+# --> output
+  # Index: 0, Value: spa day
+  # Index: 1, Value: perfume
+  # Index: 2, Value: purse
+  # Index: 3, Value: bones for the broth
+  # Index: 4, Value: spirited beverages
+  # Index: 5, Value: flowers
+  # Index: 6, Value: cake 
+
 # ruby method link
+# --> Built-in Classes and Methods
+# https://www.ruby-lang.org/en/documentation/
+# http://phrogz.net/programmingruby/builtins.html
