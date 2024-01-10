@@ -81,14 +81,14 @@ Song
 
 ## Default Values
 Two ways to provide default for an attribute  
-1. assign the value to the attribute within the execute code
+1. assign the value to the attribute within the executable code
 ```rb
   def initialize(artist, song_title, genre)
     super(artist, song_title, genre)
     @fav_list = []
   end
 ```
-2. assign the value initialize parameters
+2. assign the value to the initialize method parameters
 ```rb
   def initialize(artist, song_title, genre, fav_list = [])
     super(artist, song_title, genre)
@@ -106,17 +106,32 @@ Two ways to provide default for an attribute
 # testing that songs can be added to the fav_list array
   it 'has the ability to add songs to the fav_list array' do
     chantel = PlayList.new('Sisqo', 'Thong Song', 'R&B')
+
     # debugging to see the object and the fav_list attribute values
     p 'chantel song: ', chantel
     p 'fav_list: ', chantel.fav_list
+
     expect{ chantel.add_song(chantel) }.to change{ chantel.fav_list }.from([]).to([chantel])
+
     # debugging to see the fav_list value after performing the method call
     p 'fav_list ', chantel.fav_list
   end
 ```
 
 ## Additional notes
-- Modified the PlayList to show how to push to the array in a more appropriate approach: removed inheritance,song_title attribute and genre
-- Songs will be created by instantiating the Song class 
-- add_song method on the PlayList class will push those songs into the fav_list array
-- This change also required a modification on the tests for PlayList
+- Modified the PlayList to show how to push to the array in a more appropriate approach: removed inheritance and the artist, song_title, and genre attributes
+- Song objects will be created by instantiating the Song class
+- PlayList objects will be created by instantiating the PlayList class
+- add_song method on the PlayList class will push the song objects into the fav_list array
+- This change will also require a modification of the tests for PlayList
+
+### Modified Process
+1. Create a directory to organize the files
+2. Create a ruby file for our code
+3. Create a testing file with the extension `_spec.rb`
+4. Test the Song class for the attributes of artist, song_name, genre
+5. Test the PlayList class for the following:
+  - attributes of music_fan and fav_list
+  - method to place the song objects in the fav_list
+***Testing first, code last. Some tests may need modifcations as the properties of the classes are updated.***
+
