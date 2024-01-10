@@ -43,30 +43,32 @@ describe PlayList do
   # modified for additional notes
   # testing for music_fan attribute
   it 'has a music_fan attribute' do
-    favorite = PlayList.new('Jason Aldean')
-    expect(favorite.music_fan).to eq('Jason Aldean')
-    expect(favorite.music_fan).to be_a(String)
+    rod = PlayList.new('Rod')
+    expect(rod.music_fan).to eq('Rod')
+    expect(rod.music_fan).to be_a(String)
   end
 
   # testing for a fav_list attribute
   it 'has a fav_list attribute' do
-    favorite = PlayList.new('Jason Aldean')
-    expect(favorite.fav_list).to eq([])
-    expect(favorite.fav_list).to be_a(Array)
+    rod = PlayList.new('Rod')
+    expect(rod.fav_list).to eq([])
+    expect(rod.fav_list).to be_a(Array)
   end
 
   # testing that songs can be added to the fav_list array
   it 'has the ability to add songs to the fav_list array' do
-    # instantiate superclass to create song objects
+    # instantiate Song class to create song objects
     favorite = Song.new('Jason Aldean', 'Big Green Tractor', 'Country')
     chantel = Song.new('Sisqo', 'Thong Song', 'R&B')
 
-    # instantiate subclass to create playlist objects
+    # instantiate PlayList class to create playlist objects
     rod = PlayList.new('Rod')
     birthday_song = PlayList.new('Capricorn')
-    # include method call in the assertion(expect statement)
+    
+    # method call inside the assertion(expect statement)
     expect{ rod.add_song(favorite) }.to change{ rod.fav_list }.from([]).to([favorite])
-    # perform method call outside of expect statement
+    
+    # method call outside the expect statement
     birthday_song.add_song(chantel)
     expect(birthday_song.fav_list).to eq([chantel])
   end
