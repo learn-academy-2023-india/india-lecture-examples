@@ -114,3 +114,9 @@ Two ways to provide default for an attribute
     p 'fav_list ', chantel.fav_list
   end
 ```
+
+## Additional notes
+- Modified the PlayList to show how to push to the array in a more appropriate approach: removed inheritance,song_title attribute and genre
+- Songs will be created by instantiating the Song class 
+- add_song method on the PlayList class will push those songs into the fav_list array
+- This change also required a modification on the tests for PlayList

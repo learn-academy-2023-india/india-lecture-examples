@@ -8,11 +8,11 @@ class Song
   end
 end
 
-class PlayList < Song
-  attr_accessor :fav_list
+class PlayList
+  attr_accessor :fav_list, :music_fan
 
-  def initialize(artist, song_title, genre)
-    super(artist, song_title, genre)
+  def initialize(music_fan)
+    @music_fan = music_fan
     @fav_list = []
   end
 
