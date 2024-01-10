@@ -17,11 +17,11 @@ domaine specific language: (DSL) language that is specialized for a particular t
 2. Create a ruby file for our code
 3. Create a testing file with the extension `_spec.rb`
 4. Create a superclass Song with the following:
-  - attributes of artist, song_name, genre
-  - methods: display the song info
+    - attributes of artist, song_name, genre
+    - methods: display the song info
 5. Create a subclass PlayList with the following:
-  - attributes of fav_list
-  - method to place the songs in the fav_list
+    - attributes of fav_list
+    - method to place the songs in the fav_list
 6. Testing first, code last
 ### RED-GREEN-REFACTOR
 - RED
@@ -130,8 +130,8 @@ Two ways to provide default for an attribute
 2. Create a ruby file for our code
 3. Create a testing file with the extension `_spec.rb`
 4. Test the Song class for the attributes of artist, song_name, genre
-5. Test the PlayList class for the following:
-  - attributes of music_fan and fav_list
-  - method to place the song objects in the fav_list
+5. Test the PlayList class for the following:  
+    - attributes of music_fan and fav_list
+    - method to place the song objects in the fav_list  
 ***Testing first, code last. Some tests may need modifcations as the properties of the classes are updated.***
 
