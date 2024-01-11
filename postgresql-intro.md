@@ -77,18 +77,18 @@ p josh
 ## PostgreSQL
 
 ## CRUD
-Database Management System allows the following:
-Create - make a new database instance
-Read - display or read that instance
-Update - edit or modify that instance
-Delete - remove that instance
+Database Management System allows the following:  
+- Create: make a new database instance
+- Read: display or read that instance
+- Update: edit or modify that instance
+- Delete: remove that instance
 
-database query - request about the data in the database, action taken upon that data. Queries allow you to retrieve, insert, update, and delete data in tables.
+database query: request about the data in the database, action taken upon that data. Queries allow you to retrieve, insert, update, and delete data in tables.
 
 ## ALL Instances
-SELECT statement - designates which columns need to be queried
-FROM - designates the table that the columns belong to
-* - splat, universal selector, to state all instances or columns
+- SELECT statement: designates which columns need to be queried
+- FROM: designates the table that the columns belong to  
+- `*`: splat, universal selector, to state all instances or columns
 
 ```sql
 SELECT *
