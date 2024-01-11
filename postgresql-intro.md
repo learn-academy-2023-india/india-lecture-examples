@@ -19,7 +19,7 @@
 ## relational database: 
 - structures/organizes the database into rows and columns within a table
 
-## How does a database relates to a Ruby class?
+## How does a database relate to a Ruby class?
 ```rb
 # ruby class
 class NinjaTurtle
