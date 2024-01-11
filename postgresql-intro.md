@@ -6,13 +6,22 @@
 ## General purpose languages
 -  syntax or structure for the code: JavaScript, Ruby
 
-SQL (Structured Query Language): domain language that gives the ability to evaluate databases
+## Database:
+- a container to store data
 
-PostgreSQL: object relational database system
+## SQL (Structured Query Language)
+- domain specific language that gives the ability to evaluate/manage databases. 
 
-relational database: structures the data in rows and columns
+### PostgreSQL: 
+- object relational database management system (ORDMS)
+- flavor of sql that is very OOP
 
+## relational database: 
+- structures/organizes the database into rows and columns within a table
+
+## How does a database relates to a Ruby class?
 ```rb
+# ruby class
 class NinjaTurtle
 
   # helper method to create getter/setter methods 
@@ -39,17 +48,27 @@ p josh
 
 # # output: #<Leonardo:0x0000000103d3db88 @turtle="Snap", @weapon="throwing axe">
 ```
-database columns: represents the attribute as well as datatype or class of the expected value
-database rows: represents each object with values
-database instance: each object, also the rows
-database table: consists of all the rows and columns for that database
-schema: a record of the current structure/status of the database
-primary key: a unique identifier for each instance of the database, automatically assign, default datatype is integer
+
+## relational database 
+- representation of NinjaTurtle class and objects
+![Relational Database](assets/database.png)
+
+- database columns: represents the attribute as well as datatype or class of the expected value
+
+- database rows: represents each object with values
+    - database instance: each object, also the rows, aka each individual record or data entry
+
+- database table: consists of all the rows and columns for that database, structured collection of data
+
+- schema: a record of the current structure/status of the database which includes names of tables, as well as the names and data types of columns
+
+- primary key: a unique identifier for each instance of the database, automatically assigned, default datatype is integer
 
 ```rb
-# Data is stored as an object
+# Each data entry or instance is stored as an object with key:value pairs
+# primary key represented by the id attribute
   {
-    id: 1,
+    id: 1, 
     turtle: 'Snap',
     weapon: 'throwing axe'
   }
@@ -58,13 +77,13 @@ primary key: a unique identifier for each instance of the database, automaticall
 ## PostgreSQL
 
 ## CRUD
-Database Management
+Database Management System allows the following:
 Create - make a new database instance
 Read - display or read that instance
 Update - edit or modify that instance
 Delete - remove that instance
 
-database query - request about the data in the database, action taken upon that data
+database query - request about the data in the database, action taken upon that data. Queries allow you to retrieve, insert, update, and delete data in tables.
 
 ## ALL Instances
 SELECT statement - designates which columns need to be queried
@@ -77,6 +96,7 @@ FROM country
 ```
 
 ## First 10 instances showing only the name, continent, and region columns
+- LIMIT: keyword that restricts the number of instances returned by a query
 ```sql
 SELECT name, continent, region
 FROM country
@@ -84,7 +104,7 @@ LIMIT 10
 ```
 
 ## Setting a condition to see only the continent of Asia
-WHERE clause: allows a condition to be met to display specified instances 
+WHERE clause: allows a condition to be met to display specified instances, filters the instances
 ```sql
 SELECT name, population, lifeexpectancy
 FROM country
@@ -102,7 +122,7 @@ FROM country
 WHERE population < 1000000
 ```
 ### shorthand for zeros
-- 1000000
+- instead of 1000000
 - 1e6
 
 ## only countries with a population less than 1,000,000 in Asia
@@ -113,15 +133,12 @@ WHERE population < 1e6
 AND continent = 'Asia'
 ```
 
-wildcard: allows to query for a sequence of characters that are expected in a value
+## wildcard: allows to query for a sequence of characters that are expected in a value
 - denoted with wildcard operator (%)
-- uses LIKE
+- uses LIKE: keyword used for pattern matching
 ```sql
 SELECT name, continent, population
 FROM country
 WHERE population < 1e6 
 AND continent LIKE 'South Ame%'
 ```
-
-subquery
-aggregate functions
