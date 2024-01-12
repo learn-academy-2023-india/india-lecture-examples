@@ -2,8 +2,8 @@
 
 - model class: database layer
 - generate commands: rails commands to create the applicable components for the rails application (models, views, controllers, migrations), rails does all the heavy lifting of creating the components by providing all the necessary dependencies and configuration
-- ORM (Object Relational Mapping): allows us to interact with the databases using OOP, performs the same actions as SQL using ruby methods 
-- Active Record: ORM in rails
+- ORM (Object Relational Mapping): allows us to interact with the databases using OOP 
+- Active Record: ORM in rails, performs the same actions as SQL using ruby methods
 - migrations: tracks the changes made to the database by storing in a migration file
 - database schema: stores the current status of the database attributes and their datatype in a table
 - rails console: a shell, Interactive Ruby (IRB) environment that allows interaction with the database through Active Record queries 
