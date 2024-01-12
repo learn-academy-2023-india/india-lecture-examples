@@ -6,7 +6,7 @@
 - Active Record: ORM in rails
 - migrations: tracks the changes made to the database by storing in a migration file
 - database schema: stores the current status of the database attributes and their datatype in a table
-- rails console: a shell that allows interaction with the database and used Active Record queries
+- rails console: a shell, Interactive Ruby (IRB) environment that allows interaction with the database through Active Record queries 
 - primary key: a unique identifier that Rails automatically assign to database instances, normally an integer
 
 ## naming conventions
@@ -30,48 +30,59 @@
 
 ## symbols in front of commands
 Not meant to be part of the command. Just stating where it should be executed.
-- $: terminal command
-- >: rails console command
+- `$`: terminal command
+- `>`: rails console command
+- `#`: psql shell command
 
 ## Active record queries
 - To enter rails console: $ `rails console` or `rails c`
+- To exit rails console:   
+`> exit`
+- The model name will be referenced with all the query methods
 
 ### Create
 - to create a new instance in the database, use the create method with the attributes and their values as key:value pairs separated by commas
-> Menu.create(chef: 'Puamaeole', dish: `ManaPua` )
-
-- Output:
+`> Menu.create(chef: 'Puamaeole', dish: 'ManaPua')`
+```bash
+# Active Record
 #<Menu:0x0000000107bc84c0
  id: 1,
  chef: "Puamaeole",
  dish: "ManaPua",
  created_at: Thu, 11 Jan 2024 22:01:50.891670000 UTC +00:00,
  updated_at: Thu, 11 Jan 2024 22:01:50.891670000 UTC +00:00>
+```
 
 ### Read
-- to retrieve all the instances reference the Model name with the all method: > `Menu.all`
-- Output ( all instances are returned in an array):
+- all method allows retrieval of all the database instances instances, returns the instances inside an array   
+`> Menu.all`
+```bash
+# Active Record
 [#<Menu:0x00000001080ece60
   id: 1,
   chef: "Puamaeole",
   dish: "ManaPua",
   created_at: Thu, 11 Jan 2024 22:01:50.891670000 UTC +00:00,
   updated_at: Thu, 11 Jan 2024 22:01:50.891670000 UTC +00:00>] 
+```
 
 - to retrieve one instance
-- find method takes the primary key (id) as an argument and returns the instance
-> Menu.find 4
-- Output:
+- find method takes the primary key (id) as an argument and returns the instance  
+`> Menu.find 4`
+```bash
+# Active Record
 #<Menu:0x0000000108208498
  id: 4,
  chef: "Byter",
  dish: "cornbread",
  created_at: Thu, 11 Jan 2024 22:23:46.431987000 UTC +00:00,
  updated_at: Thu, 11 Jan 2024 22:23:46.431987000 UTC +00:00>
+```
 
-- where methods takes the key:value as an argument and returns the instance(s) inside an array
-> Menu.where(dish: 'cornbread')
-- Output:
+- where methods takes the key:value as an argument and returns the instance(s) inside an array  
+`> Menu.where(dish: 'cornbread')`
+```bash
+# Active Record
 [#<Menu:0x00000001081c6b88
   id: 4,
   chef: "Byter",
@@ -80,27 +91,68 @@ Not meant to be part of the command. Just stating where it should be executed.
   updated_at: Thu, 11 Jan 2024 22:23:46.431987000 UTC +00:00>] 
 3.2.0 :016 > Menu.find 4
   Menu Load (1.3ms)  SELECT "menus".* FROM "menus" WHERE "menus"."id" = $1 LIMIT $2  [["id", 4], ["LIMIT", 1]]
+```
 
 ### Update
-- Retrieve the instance, store in a variable
-bread = Menu.find 4
+1. Retrieve the instance, store in a variable  
+`> bread = Menu.find 4`  
+`> bread`
+```bash
+# Active Record
+#<Menu:0x000000010812ba48
+  id: 4,
+  chef: "Byter",
+  dish: "cornbread",
+  created_at: Thu, 11 Jan 2024 22:23:46.431987000 UTC +00:00,
+  updated_at: Thu, 11 Jan 2024 22:40:25.320432000 UTC +00:00>
+```
 
-- Update the instance
+2. Update the instance
 - update method allows the value to be changed and saves the change to the database
 bread.update(dish: 'expensive cornbread')
+```bash
+# Active Record
 #<Menu:0x000000010812ba48
   id: 4,
   chef: "Byter",
   dish: "expensive cornbread",
   created_at: Thu, 11 Jan 2024 22:23:46.431987000 UTC +00:00,
   updated_at: Thu, 11 Jan 2024 22:40:25.320432000 UTC +00:00>
+```
 
 ### Delete
-- Retrieve the instance, store in a variable
-> kala = Menu.where(chef: 'Kala')
-- use bracket notation to access an instance inside the array
-- destroy method will remove the instance from the database
-> kala[1].destroy
+1. Retrieve the instance, store in a variable  
+`> kala = Menu.where(chef: 'Kala')`
+```bash
+# Active Record
+[#<Menu:0x00000001081c1cc8
+  id: 3,
+  chef: "Kala",
+  dish: "jollof rice",
+  created_at: Thu, 11 Jan 2024 22:21:27.956047000 UTC +00:00,
+  updated_at: Thu, 11 Jan 2024 22:21:27.956047000 UTC +00:00>,
+ #<Menu:0x00000001081c1b88
+  id: 5,
+  chef: "Kala",
+  dish: "shrimp gravy",
+  created_at: Thu, 11 Jan 2024 22:48:12.626716000 UTC +00:00,
+  updated_at: Thu, 11 Jan 2024 22:48:12.626716000 UTC +00:00>]
+```
+- Use bracket notation to access an instance inside the array  
+`> kala[1]`
+```bash
+# Active Record
+#<Menu:0x00000001081c1b88
+ id: 5,
+ chef: "Kala",
+ dish: "shrimp gravy",
+ created_at: Thu, 11 Jan 2024 22:48:12.626716000 UTC +00:00,
+ updated_at: Thu, 11 Jan 2024 22:48:12.626716000 UTC +00:00> 
+```
+
+2. Delete the instance
+- destroy method will remove the instance from the database  
+`> kala[1].destroy`
 
 
 
