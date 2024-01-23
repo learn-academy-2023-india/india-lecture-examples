@@ -82,7 +82,7 @@ end
 `> time.update(price: '30% of left right center winnings')`
 
 ## Modifying column names
-- Generate a migration
+- Generate a migration  
 `$ rails g migration change_price_to_price_unit`  
 `$ rails g migration ChangePriceToPriceUnit`
 - Add change definition to change method on migration file
