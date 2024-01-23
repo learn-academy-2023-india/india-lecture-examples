@@ -95,3 +95,25 @@ end
 ### Approach submitted by Full Stack Web Developer Jeremie `.order(:id)`  
 `> IndiaCommunity.order(:id)`    
 ***NOTE: The order method sorts all the records in ascending order based on the id column which stores the primary key automatically assign by rails.***
+
+### modifications to the migration commands
+For example, you created a model that you do not want to use.  
+`$ rails generate model HaterCommunity name:string`
+
+#### If you have not save the changes to the db schema
+- use the destroy model terminal command  
+`$ rails destroy model HaterCommunity name:string`
+
+#### If you have saved the changes to the db schema
+- remove the table from schema by running rollback terminal command, which essentially undo the changes made by the current migration file   
+`$ rails db:rollback`  
+- delete the migration file containing the change definition that created the table you just removed  
+`Look for migration file under db/migrate`  
+- drop the database  
+`$ rails db:drop` 
+- create an empty database  
+`$ rails db:create`
+- runs all migrations  
+`$ rails db:migrate` 
+
+
